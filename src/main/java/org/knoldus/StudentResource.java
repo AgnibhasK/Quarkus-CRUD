@@ -2,6 +2,8 @@ package org.knoldus;
 
 import io.quarkus.panache.common.Sort;
 import org.knoldus.entity.StudentEntity;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
@@ -12,6 +14,7 @@ import java.util.List;
  @Path("/person")
  @Consumes(MediaType.APPLICATION_JSON)
  @Produces(MediaType.APPLICATION_JSON)
+ @RestController
  public class StudentResource {
 
         @GET
@@ -20,7 +23,8 @@ import java.util.List;
         }
         @POST
         @Transactional
-        public Response create(StudentEntity student) {
+
+        public Response create(@RequestBody StudentEntity student) {
             if (student == null || student.id != null)
                 throw new WebApplicationException("id != null");
             student.persist();
