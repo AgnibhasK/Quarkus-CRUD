@@ -13,8 +13,8 @@ public class StudentEntity extends PanacheEntityBase {
     public Long id;
 
     @Column(name="first_name")
-    public String firstName;
+    public String first_name;
 
     @Column(name="last_name")
-    public String lastName;
+    public String last_name;
 }
