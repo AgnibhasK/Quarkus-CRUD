@@ -1,4 +1,4 @@
-package org.knoldus.entity;
+package org.knoldus.Application.entity;
 
 import javax.persistence.*;
 
